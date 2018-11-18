@@ -1,6 +1,10 @@
 #!/bin/bash
-TARGETS="192.168.1.0/24"
-OPTIONS="-sV"
+if [[ "$TARGETS" == "" ]]; then
+	TARGETS="192.168.1.0/24"
+fi
+if [[ "$OPTIONS" == "" ]]; then
+	OPTIONS="-sV"
+fi
 
 cd /inventory || return
 python3 -m http.server 1337 &

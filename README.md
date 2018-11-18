@@ -4,16 +4,12 @@ Have you ever wanted up-to-date NMap scan data in an easily understandable forma
 ## Build and Run Instructions
 
 #### Clone
-`git clone https://github.com/jgamblin/NMapNetworkInventoryContainer`
-
-#### Configure
-In `continuousscan.sh` edit  the `TARGETS="192.168.1.0/24"` and `OPTIONS="-sV"` line with your hosts
-
-#### Build  
-`docker build -t inventory .`
+`git clone https://github.com/thelittlefireman/NMapNetworkInventoryContainer`
 
 #### Run
 `docker run --name nmap-inventory -t -p 1337:1337 inventory`
+
+You can add `-e OPTIONS "-sV"` and `-e TARGETS "192.168.1.0/24"` and change by what you want
 
 #### Enjoy
 After the first run is complete (it will take a while) you can access the website [here](http://127.0.0.1:1337).
